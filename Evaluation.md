@@ -17,15 +17,15 @@ A LA FIN DU TP: pensez à pousser vos commits sur votre compte GitHub et envoyer 
 Réponses aux questions posées
 -----------------------------
 
-Q1)
+Q1) Utiliser une interface Operations et des classes pour les différentes opération qui implémentent l'interface, faire une liste de ces operations et la parcourir jusqu'à trouver la bonne
 
-Q2)
+Q2) L : Substitution de Liskov (Liskov substitution Principle)
 
-Q3)
+Q3) D : Inversion des dépendances (Dependency Inversion Principle)
 
-Q4)
+Q4) Les données sont saisies en dur dans le code, et la présentation n'est pas séparée du domaine : on peut donc uniquement faire de la sortie console
 
-Q5)
+Q5) L : Substitution de Liskov (Liskov substitution Principle)
 
-Q6)
+Q6) L : Substitution de Liskov (Liskov substitution Principle)
  
