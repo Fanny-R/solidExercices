@@ -11,7 +11,7 @@ namespace SolidExercices.Tests
         {
             var calculator = new Calculator();
             var result = calculator.Calculate("1+2,3");
-            Check.That(result).IsEqualTo(3.3);
+            Check.That(result).IsEqualTo(3.3m);
         }
 
         [Test]
@@ -19,7 +19,7 @@ namespace SolidExercices.Tests
         {
             var calculator = new Calculator();
             var result = calculator.Calculate("5-2,3");
-            Check.That(result).IsEqualTo(2.7);
+            Check.That(result).IsEqualTo(2.7m);
         }
 
         [Test]
@@ -27,7 +27,7 @@ namespace SolidExercices.Tests
         {
             var calculator = new Calculator();
             var result = calculator.Calculate("5/2");
-            Check.That(result).IsEqualTo(2.5);
+            Check.That(result).IsEqualTo(2.5m);
         }
 
         [Test]
@@ -42,8 +42,8 @@ namespace SolidExercices.Tests
         public void CalculateASumWithMoreThanTwoOperand()
         {
             var calculator = new Calculator();
-            var result = calculator.Calculate("8+2+6,3+10");
-            Check.That(result).IsEqualTo(26.3);
+            var result = calculator.Calculate("8+2+10+6,5");
+            Check.That(result).IsEqualTo(26.5m);
         }
 
         [Test]
