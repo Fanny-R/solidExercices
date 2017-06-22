@@ -18,7 +18,7 @@ namespace SolidExercices
                 return result;
 
             }
-            else if (operation.Contains('-'))
+            if (operation.Contains('-'))
             {
                 string[] numbers = operation.Split('-');
                 double result = Convert.ToDouble(numbers[0]);
@@ -28,7 +28,7 @@ namespace SolidExercices
                 }
                 return result;
             }
-            else if (operation.Contains('/'))
+            if (operation.Contains('/'))
             {
                 string[] numbers = operation.Split('/');
                 double result = Convert.ToDouble(numbers[0]);
@@ -38,7 +38,7 @@ namespace SolidExercices
                 }
                 return result;
             }
-            else if (operation.Contains('*'))
+            if (operation.Contains('*'))
             {
                 string[] numbers = operation.Split('*');
                 double result = Convert.ToDouble(numbers[0]);
@@ -48,11 +48,8 @@ namespace SolidExercices
                 }
                 return result;
             }
-            else
-            {
-                Console.WriteLine("Opération non prise en charge");
-                return 0;
-            }
+            Console.WriteLine("Opération non prise en charge");
+            return 0;
         }
     }
 }
