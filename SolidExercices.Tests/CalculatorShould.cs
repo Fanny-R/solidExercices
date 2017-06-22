@@ -36,5 +36,13 @@ namespace SolidExercices.Tests
             var result = calculator.Calculate("5*2");
             Check.That(result).IsEqualTo(10);
         }
+
+        [Test]
+        public void CalculateASumWithMoreThanTwoOperand()
+        {
+            var calculator = new Calculator();
+            var result = calculator.Calculate("8+2+6,3+10");
+            Check.That(result).IsEqualTo(26.3);
+        }
     }
 }
