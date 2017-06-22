@@ -5,6 +5,11 @@ namespace SolidExercices
 {
     public class Calculator
     {
+        private readonly List<IOperation> _operations;
+        public Calculator(List<IOperation> operations)
+        {
+            _operations = operations;
+        }
         public decimal Calculate(string calcul)
         {
             var operations = new List<IOperation>();

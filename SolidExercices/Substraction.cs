@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SolidExercices
 {
-    class Substraction : IOperation
+    public class Substraction : IOperation
     {
         public bool CanCalculate(string calcul)
         {

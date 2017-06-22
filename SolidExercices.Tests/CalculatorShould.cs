@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using NFluent;
 using NUnit.Framework;
 
@@ -6,11 +7,22 @@ namespace SolidExercices.Tests
 {
     public class CalculatorShould
     {
+        private Calculator _calculator;
+        [SetUp]
+        public void Init()
+        {
+            var operations = new List<IOperation>();
+            operations.Add(new Sum());
+            operations.Add(new Substraction());
+            operations.Add(new Division());
+            operations.Add(new Multiplication());
+            _calculator = new Calculator(operations);
+        }
+
         [Test]
         public void CalculateASum()
         {
-            var calculator = new Calculator();
-            var result = calculator.Calculate("1+2,3");
+            var result = _calculator.Calculate("1+2,3");
             Check.That(result).IsEqualTo(3.3m);
         }
 
