@@ -11,11 +11,7 @@ namespace SolidExercices.Tests
         [SetUp]
         public void Init()
         {
-            var operations = new List<IOperation>();
-            operations.Add(new Sum());
-            operations.Add(new Substraction());
-            operations.Add(new Division());
-            operations.Add(new Multiplication());
+            var operations = new List<IOperation> {new Sum(), new Substraction(), new Division(), new Multiplication()};
             _calculator = new Calculator(operations);
         }
 
