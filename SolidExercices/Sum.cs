@@ -15,13 +15,18 @@ namespace SolidExercices
 
         public decimal Calculate(string calcul)
         {
-            string[] numbers = calcul.Split('+');
-            var result = Convert.ToDecimal(numbers[0]);
-            foreach (var number in numbers.Skip(1).ToArray())
+            try
             {
-                result += Convert.ToDecimal(number);
+                string[] numbers = calcul.Split('+');
+                var result = Convert.ToDecimal(numbers[0]);
+                foreach (var number in numbers.Skip(1).ToArray())
+                {
+                    result += Convert.ToDecimal(number);
+                }
+                return result;
             }
-            return result;
+            catch (ArgumentOutOfRangeException e) { }
+
         }
     }
 }
