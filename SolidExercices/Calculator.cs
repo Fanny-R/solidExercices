@@ -8,19 +8,14 @@ namespace SolidExercices
         public decimal Calculate(string operation)
         {
             IOperation sum = new Sum();
+            IOperation substraction = new Substraction();
             if (sum.CanCalculate(operation))
             {
                 return sum.Calculate(operation);
             }
-            if (operation.Contains('-'))
+            if (substraction.CanCalculate(operation))
             {
-                string[] numbers = operation.Split('-');
-                var result = Convert.ToDecimal(numbers[0]);
-                foreach (var number in numbers.Skip(1).ToArray())
-                {
-                    result = result - Convert.ToDecimal(number);
-                }
-                return result;
+                return substraction.Calculate(operation);
             }
             if (operation.Contains('/'))
             {

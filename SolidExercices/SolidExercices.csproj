@@ -46,6 +46,7 @@
     <Compile Include="Calculator.cs" />
     <Compile Include="IOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Substraction.cs" />
     <Compile Include="Sum.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
