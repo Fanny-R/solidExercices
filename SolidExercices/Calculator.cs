@@ -48,8 +48,7 @@ namespace SolidExercices
                 }
                 return result;
             }
-            Console.WriteLine("Opération non prise en charge");
-            return 0;
+            throw new ArgumentOutOfRangeException();
         }
     }
 }
