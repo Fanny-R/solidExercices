@@ -9,6 +9,7 @@ namespace SolidExercices
         {
             IOperation sum = new Sum();
             IOperation substraction = new Substraction();
+            IOperation division = new Division();
             if (sum.CanCalculate(operation))
             {
                 return sum.Calculate(operation);
@@ -17,15 +18,9 @@ namespace SolidExercices
             {
                 return substraction.Calculate(operation);
             }
-            if (operation.Contains('/'))
+            if (division.CanCalculate(operation))
             {
-                string[] numbers = operation.Split('/');
-                var result = Convert.ToDecimal(numbers[0]);
-                foreach (var number in numbers.Skip(1).ToArray())
-                {
-                    result = result / Convert.ToDecimal(number);
-                }
-                return result;
+                return division.Calculate(operation);
             }
             if (operation.Contains('*'))
             {
