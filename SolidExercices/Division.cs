@@ -19,7 +19,11 @@ namespace SolidExercices
             var result = Convert.ToDecimal(numbers[0]);
             foreach (var number in numbers.Skip(1).ToArray())
             {
-                result = result / Convert.ToDecimal(number);
+                try
+                {
+                    result = result / Convert.ToDecimal(number);
+                }
+                catch (DivideByZeroException e) { }
             }
             return result;
         }
