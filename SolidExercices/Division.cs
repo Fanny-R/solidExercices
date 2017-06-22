@@ -23,7 +23,10 @@ namespace SolidExercices
                 {
                     result = result / Convert.ToDecimal(number);
                 }
-                catch (DivideByZeroException e) { }
+                catch (DivideByZeroException e)
+                {
+                    Console.WriteLine(e);
+                }
             }
             return result;
         }

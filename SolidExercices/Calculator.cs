@@ -12,13 +12,22 @@ namespace SolidExercices
         }
         public decimal Calculate(string calcul)
         {
-            foreach (var operation in _operations)
+            try
             {
-                if (operation.CanCalculate(calcul))
+                foreach (var operation in _operations)
                 {
-                    return operation.Calculate(calcul);
+                    if (operation.CanCalculate(calcul))
+                    {
+                        return operation.Calculate(calcul);
+                    }
                 }
             }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
             throw new ArgumentOutOfRangeException();
         }
     }

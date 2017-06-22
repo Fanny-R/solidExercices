@@ -19,7 +19,7 @@ namespace SolidExercices
                     var result = calculator.Calculate(operation);
                     Console.WriteLine(operation + " = " + result);
                 }
-                catch (ArgumentException e)
+                catch (Exception e)
                 {
                     Console.WriteLine("ERROR: " + e.Message);
                 }
