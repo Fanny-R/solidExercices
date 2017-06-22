@@ -8,14 +8,14 @@ namespace SolidExercices
 {
     class Substraction : IOperation
     {
-        public bool CanCalculate(string operation)
+        public bool CanCalculate(string calcul)
         {
-            return operation.Contains('-');
+            return calcul.Contains('-');
         }
 
-        public decimal Calculate(string operation)
+        public decimal Calculate(string calcul)
         {
-            string[] numbers = operation.Split('-');
+            string[] numbers = calcul.Split('-');
             var result = Convert.ToDecimal(numbers[0]);
             foreach (var number in numbers.Skip(1).ToArray())
             {

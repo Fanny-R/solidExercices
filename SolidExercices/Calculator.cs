@@ -1,31 +1,24 @@
 ﻿using System;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace SolidExercices
 {
     public class Calculator
     {
-        public decimal Calculate(string operation)
+        public decimal Calculate(string calcul)
         {
-            IOperation sum = new Sum();
-            IOperation substraction = new Substraction();
-            IOperation division = new Division();
-            IOperation multiplication = new Multiplication();
-            if (sum.CanCalculate(operation))
+            var operations = new List<IOperation>();
+            operations.Add(new Sum());
+            operations.Add(new Substraction());
+            operations.Add(new Division());
+            operations.Add(new Multiplication());
+
+            foreach (var operation in operations)
             {
-                return sum.Calculate(operation);
-            }
-            if (substraction.CanCalculate(operation))
-            {
-                return substraction.Calculate(operation);
-            }
-            if (division.CanCalculate(operation))
-            {
-                return division.Calculate(operation);
-            }
-            if (multiplication.CanCalculate(operation))
-            {
-                return multiplication.Calculate(operation);
+                if (operation.CanCalculate(calcul))
+                {
+                    return operation.Calculate(calcul);
+                }
             }
             throw new ArgumentOutOfRangeException();
         }
