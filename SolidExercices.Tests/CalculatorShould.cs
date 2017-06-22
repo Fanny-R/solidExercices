@@ -1,4 +1,5 @@
-﻿using NFluent;
+﻿using System;
+using NFluent;
 using NUnit.Framework;
 
 namespace SolidExercices.Tests
@@ -43,6 +44,13 @@ namespace SolidExercices.Tests
             var calculator = new Calculator();
             var result = calculator.Calculate("8+2+6,3+10");
             Check.That(result).IsEqualTo(26.3);
+        }
+
+        [Test]
+        public void ThrowAnExceptionWhenIncorrectOperation()
+        {
+            var calculator = new Calculator();
+            Assert.Throws<ArgumentOutOfRangeException>(() => calculator.Calculate(""));
         }
     }
 }
