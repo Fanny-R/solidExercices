@@ -28,5 +28,13 @@ namespace SolidExercices.Tests
             var result = calculator.Calculate("5/2");
             Check.That(result).IsEqualTo(2.5);
         }
+
+        [Test]
+        public void CalculateAMultiplication()
+        {
+            var calculator = new Calculator();
+            var result = calculator.Calculate("5*2");
+            Check.That(result).IsEqualTo(10);
+        }
     }
 }
