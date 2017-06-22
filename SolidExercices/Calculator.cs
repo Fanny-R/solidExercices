@@ -7,17 +7,53 @@ namespace SolidExercices
     {
         public double Calculate(string operation)
         {
-            double result = 0;
             if(operation.Contains('+'))
             {
                 string[] numbers = operation.Split('+');
-                foreach (var number in numbers)
+                double result = Convert.ToDouble(numbers[0]);
+                foreach (var number in numbers.Skip(1).ToArray())
                 {
                     result += Convert.ToDouble(number);
                 }
+                Console.WriteLine("BLABLA");
+                return result;
+
+            }
+            else if (operation.Contains('-'))
+            {
+                string[] numbers = operation.Split('-');
+                double result = Convert.ToDouble(numbers[0]);
+                foreach (var number in numbers.Skip(1).ToArray())
+                {
+                    result = result - Convert.ToDouble(number);
+                }
                 return result;
             }
-            return result;
+            else if (operation.Contains('/'))
+            {
+                string[] numbers = operation.Split('/');
+                double result = Convert.ToDouble(numbers[0]);
+                foreach (var number in numbers.Skip(1).ToArray())
+                {
+                    result = result / Convert.ToDouble(number);
+                }
+                return result;
+            }
+            else if (operation.Contains('*'))
+            {
+                string[] numbers = operation.Split('*');
+                double result = Convert.ToDouble(numbers[0]);
+                foreach (var number in numbers.Skip(1).ToArray())
+                {
+                    result = result * Convert.ToDouble(number);
+                }
+                return result;
+            }
+            else
+            {
+                Console.WriteLine("Opération non prise en charge");
+                return 0;
+            }
         }
     }
 }
