@@ -20,5 +20,13 @@ namespace SolidExercices.Tests
             var result = calculator.Calculate("5-2,3");
             Check.That(result).IsEqualTo(2.7);
         }
+
+        [Test]
+        public void CalculateADivision()
+        {
+            var calculator = new Calculator();
+            var result = calculator.Calculate("5/2");
+            Check.That(result).IsEqualTo(2.5);
+        }
     }
 }
