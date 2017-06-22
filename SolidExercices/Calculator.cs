@@ -7,7 +7,17 @@ namespace SolidExercices
     {
         public double Calculate(string operation)
         {
-            throw new NotImplementedException();
+            double result = 0;
+            if(operation.Contains('+'))
+            {
+                string[] numbers = operation.Split('+');
+                foreach (var number in numbers)
+                {
+                    result += Convert.ToDouble(number);
+                }
+                return result;
+            }
+            return result;
         }
     }
 }
