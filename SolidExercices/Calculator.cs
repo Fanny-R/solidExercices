@@ -15,7 +15,6 @@ namespace SolidExercices
                 {
                     result += Convert.ToDouble(number);
                 }
-                Console.WriteLine("BLABLA");
                 return result;
 
             }
