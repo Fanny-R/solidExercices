@@ -29,40 +29,35 @@ namespace SolidExercices.Tests
         [Test]
         public void CalculateASubstraction()
         {
-            var calculator = new Calculator();
-            var result = calculator.Calculate("5-2,3");
+            var result = _calculator.Calculate("5-2,3");
             Check.That(result).IsEqualTo(2.7m);
         }
 
         [Test]
         public void CalculateADivision()
         {
-            var calculator = new Calculator();
-            var result = calculator.Calculate("5/2");
+            var result = _calculator.Calculate("5/2");
             Check.That(result).IsEqualTo(2.5m);
         }
 
         [Test]
         public void CalculateAMultiplication()
         {
-            var calculator = new Calculator();
-            var result = calculator.Calculate("5*2");
+            var result = _calculator.Calculate("5*2");
             Check.That(result).IsEqualTo(10);
         }
 
         [Test]
         public void CalculateASumWithMoreThanTwoOperand()
         {
-            var calculator = new Calculator();
-            var result = calculator.Calculate("8+2+10+6,5");
+            var result = _calculator.Calculate("8+2+10+6,5");
             Check.That(result).IsEqualTo(26.5m);
         }
 
         [Test]
-        public void ThrowAnExceptionWhenIncorrectOperation()
+        public void ThrowAnExceptionWhenEmptyOperation()
         {
-            var calculator = new Calculator();
-            Assert.Throws<ArgumentOutOfRangeException>(() => calculator.Calculate(""));
+            Assert.Throws<ArgumentOutOfRangeException>(() => _calculator.Calculate(""));
         }
     }
 }
